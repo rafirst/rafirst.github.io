@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rafi's Portfolio</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> -->
+    <link href="./output.css" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .hover-tilt:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+        #about {
+            scroll-margin-top: 64px; /* Sesuaikan dengan tinggi navbar */
+        }
+        /* Tambahkan CSS untuk hamburger menu */
+        .mobile-menu {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .desktop-menu {
+                display: none;
+            }
+            .mobile-menu {
+                display: block;
+            }
+            #mobile-menu {
+                display: none;
+            }
+            #mobile-menu.open {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- Navbar -->
+    <nav class="bg-gray-800 py-4 fixed w-full z-10">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <div class="text-2xl font-bold">Rafi Portofolio's</div>
+            <!-- Desktop Menu -->
+            <ul class="desktop-menu flex space-x-6">
+                <li><a href="#about" class="hover:text-indigo-500 transition">About</a></li>
+                <li><a href="#portfolio" class="hover:text-indigo-500 transition">Portfolio</a></li>
+                <li><a href="#contact" class="hover:text-indigo-500 transition">Contact</a></li>
+            </ul>
+            <!-- Hamburger Button -->
+            <button id="hamburger-button" class="mobile-menu text-2xl focus:outline-none">
+                <span class="sr-only">Open menu</span>
+                &#9776;
+            </button>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu absolute top-16 right-0 bg-gray-800 w-full text-center">
+                <ul class="flex flex-col space-y-4 py-4">
+                    <li><a href="#about" class="hover:text-indigo-500 transition">About</a></li>
+                    <li><a href="#portfolio" class="hover:text-indigo-500 transition">Portfolio</a></li>
+                    <li><a href="#contact" class="hover:text-indigo-500 transition">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-[url('profile.jpg')] bg-bottom text-center h-screen flex flex-col justify-center items-center">
+        <img src="merah.jpg" alt="Profile Photo" class="w-32 h-32 rounded-full object-cover mb-6 border-4 border-white mt-6">
+        <h1 class="text-6xl font-extrabold">Hi, I'm Rafi Abdillah</h1>
+        <p class="mt-4 text-2xl">A Creative Web Developer</p>
+        <a href="#portfolio" class="mt-10 inline-block px-10 py-4 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition duration-300">Explore My Work</a>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900 opacity-80 pointer-events-none"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-extrabold">About Me</h2>
+            <h2 class="text-2xl py-5 font-extrabold">"Building the Future with Code and Creativity"</h2>
+            <p class="mt-4 text-lg text-gray-400">I am Mohammad Rafi Abdillah, a programmer who believes that technology is the key to creating inspiring solutions with a positive impact on the world. In every line of code I write, I see opportunities to learn, grow, and contribute meaningfully to the digital realm.
+
+                With a strong enthusiasm for programming, I focus on software development using technologies such as PHP, Laravel, and Bootstrap. Every project I work on, whether big or small, is an opportunity to explore new ideas and refine my technical skills.
+                
+                For me, programming is more than just a job—it’s an art of solving problems, designing solutions, and creating something new. I enjoy diving into details, tinkering with code, and finding ways to tackle complex challenges.
+                
+                I believe that the key to success in programming lies in continuous learning and the courage to keep trying. With this passion, I am committed to being part of positive change in the world of technology.
+                
+                Let's connect and collaborate to build something impactful together!</p>
+            <div class="mt-10 flex justify-center space-x-8">
+                <img src="boleh.jpg" alt="Skill 1" class="w-16 h-16">
+                <img src="boleh.jpg" alt="Skill 1" class="w-16 h-16">
+                <img src="boleh.jpg" alt="Skill 1" class="w-16 h-16">
+                <img src="boleh.jpg" alt="Skill 1" class="w-16 h-16">
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-gray-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-extrabold text-center">My Projects</h2>
+            <div class="mt-12 grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+                <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden hover-tilt">
+                    <a href="https://siperkatt.mohammadrafi.my.id/" class="w-full h-56 object-cover"><img src="profile.png" alt="Project 1" class="w-full h-56 object-cover"></a>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold">Project One</h3>
+                        <p class="mt-4 text-gray-400">The Community Relocation Website simplifies resident relocation with online registration, request submission, validation, status tracking, and reports.</p>
+                    </div>
+                </div>
+                <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden hover-tilt">
+                    <a href="https://www.instagram.com/rafirst_?utm_source=qr&igsh=MWt2cTMzMTJzeGFnNw==" class="w-full h-56 object-cover"><img src="segaraanak.jpg" alt="Project 2" class="w-full h-56 object-cover" ></a>
+                    
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold">Project Two</h3>
+                        <p class="mt-4 text-gray-400">A brief description of the project and the technologies used.</p>
+                    </div>
+                </div>
+                <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden hover-tilt">
+                    <a href="https://open.spotify.com/playlist/5fb7QjAV2kcY99INxtzipt?si=a4ec638fa40c41b6" class="w-full h-56 object-cover" target="_blank"><img src="suprek.jpg" alt="Project 3" class="w-full h-56 object-cover"></a>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold">Project Three</h3>
+                        
+                        <p class="mt-4 text-gray-400">A brief description of the project and the technologies used.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-extrabold">Contact Me</h2>
+            <p class="mt-4 text-lg text-gray-400">Let's create something amazing together. Feel free to reach out to me with your ideas or projects.</p>
+            <form action="#" method="POST" class="mt-8">
+                <div class="grid gap-6 sm:grid-cols-2">
+                    <input type="text" placeholder="Your Name" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-indigo-500 text-white">
+                    <input type="email" placeholder="Your Email" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-indigo-500 text-white">
+                </div>
+                <textarea placeholder="Your Message" class="w-full mt-6 px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-indigo-500 text-white"></textarea>
+                <button type="button" class="mt-6 px-8 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition duration-300" onclick="alert('thanks for supporting us')">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 bg-gray-900 text-center text-gray-400">
+        <p>&copy; 2024 Rafi Abdillah. All rights reserved.</p>
+        <div class="mt-4 space-x-6">
+            <a href="https://www.linkedin.com/in/rafi-abdillah-570049317?originalSubdomain=id" class="hover:text-white" target="_blank">LinkedIn</a>
+            <a href="https://github.com/rafirst" class="hover:text-white" target="_blank">GitHub</a>
+            <a href="https://www.instagram.com/rafirst_?utm_source=qr&igsh=MWt2cTMzMTJzeGFnNw==" class="hover:text-white" target="_blank">instagram</a>
+        </div>
+    </footer>
+
+    <script src="portofolio.js"></script>
+
+</body>
+</html>
