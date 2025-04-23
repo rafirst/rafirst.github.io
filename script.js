@@ -51,3 +51,28 @@ revealElements.forEach(element => {
 // Check on load and scroll
 window.addEventListener('load', checkReveal);
 window.addEventListener('scroll', checkReveal);
+
+document.addEventListener("DOMContentLoaded", () => {
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const projectCards = document.querySelectorAll(".project-card");
+
+    filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            // Hapus kelas 'active' dari semua tombol
+            filterButtons.forEach((btn) => btn.classList.remove("active"));
+            // Tambahkan kelas 'active' ke tombol yang diklik
+            button.classList.add("active");
+
+            const category = button.textContent.trim();
+
+            projectCards.forEach((card) => {
+                // Tampilkan semua proyek jika kategori adalah 'All'
+                if (category === "All" || card.dataset.category === category) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        });
+    });
+});
