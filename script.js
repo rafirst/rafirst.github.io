@@ -78,15 +78,15 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.querySelector("form").addEventListener("submit", function (e) {
-    e.preventDefault(); // Mencegah reload halaman
+    e.preventDefault();
 
-    // Ambil data dari form
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const subject = document.getElementById("subject").value;
     const message = document.getElementById("message").value;
 
-    // Kirim data ke EmailJS
+    console.log("Data yang dikirim:", { name, email, subject, message });
+
     emailjs
         .send("service_l7ok8zh", "template_flbpa3r", {
             from_name: name,
@@ -96,12 +96,13 @@ document.querySelector("form").addEventListener("submit", function (e) {
         }, "i5fE1QEsFXa1ymcAa")
         .then(
             function (response) {
+                console.log("Email berhasil dikirim:", response);
                 alert("Pesan berhasil dikirim! Terima kasih telah menghubungi saya.");
-                document.querySelector("form").reset(); // Reset form setelah berhasil
+                document.querySelector("form").reset();
             },
             function (error) {
+                console.error("Error saat mengirim email:", error);
                 alert("Terjadi kesalahan. Silakan coba lagi.");
-                console.error("Error:", error);
             }
         );
 });
