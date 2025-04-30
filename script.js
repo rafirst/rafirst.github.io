@@ -76,3 +76,32 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+document.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault(); // Mencegah reload halaman
+
+    // Ambil data dari form
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const subject = document.getElementById("subject").value;
+    const message = document.getElementById("message").value;
+
+    // Kirim data ke EmailJS
+    emailjs
+        .send("service_l7ok8zh", "template_flbpa3r", {
+            from_name: name,
+            from_email: email,
+            subject: subject,
+            message: message,
+        }, "i5fE1QEsFXa1ymcAa")
+        .then(
+            function (response) {
+                alert("Pesan berhasil dikirim! Terima kasih telah menghubungi saya.");
+                document.querySelector("form").reset(); // Reset form setelah berhasil
+            },
+            function (error) {
+                alert("Terjadi kesalahan. Silakan coba lagi.");
+                console.error("Error:", error);
+            }
+        );
+});
