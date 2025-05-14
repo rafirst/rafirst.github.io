@@ -40,6 +40,11 @@ body {
     height: 0;
 }
 
+/* Add spacing between the year text and the green dots */
+.timeline-item .mb-2 span {
+    margin-left: 1rem; /* Adjust the spacing as needed */
+}
+
 .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px -15px rgba(100, 255, 218, 0.2);
