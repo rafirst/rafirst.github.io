@@ -3,6 +3,7 @@ body {
     color: #e0e0e0;
     font-family: 'Inter', sans-serif;
     scroll-behavior: smooth;
+    overflow-x: hidden; /* Prevent horizontal scrolling on mobile */
 }
 
 .section-title::after {
@@ -17,7 +18,7 @@ body {
 .timeline-item::before {
     content: "";
     position: absolute;
-    left: -9px;
+    left: -20px; /* Increase spacing */
     top: 0;
     width: 18px;
     height: 18px;
@@ -38,6 +39,10 @@ body {
 
 .timeline-item:last-child::after {
     height: 0;
+}
+
+.timeline-item span {
+    margin-left: 10px; /* Add more spacing between the green dot and year text */
 }
 
 .project-card:hover {
@@ -165,4 +170,61 @@ h3 {
     margin-bottom: 0.5rem;
     font-size: 1rem;
     color: #e0e0e0;
+}
+
+/* Prevent excessive width on mobile */
+.container {
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
+}
+
+.project-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Adjust Contact Section Width */
+#contact .container {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* Responsiveness for Skills Section */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bg-gray-850 {
+        padding: 1rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    .list-disc li {
+        font-size: 0.875rem;
+    }
+}
+
+/* Responsiveness for Featured Projects Section */
+@media (max-width: 768px) {
+    .filter-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .filter-btn {
+        flex: 1 1 auto;
+        text-align: center;
+    }
+
+    .project-card {
+        width: 100%;
+        margin: 0 auto;
+    }
 }
